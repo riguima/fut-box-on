@@ -1,0 +1,347 @@
+body{
+				margin: 0px;
+				padding-bottom: 30px;
+				width: 100%;
+				height: 100%;
+				background-color: #e9e9e9;
+				
+			}
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+             
+				
+	   		a{
+				color: black;
+				text-decoration: none;
+				padding: 5px 10px;
+				border-bottom: 1px solid #dedede;
+				display: block;
+				font-family: 'Maven Pro', sans-serif;
+				font-size: 15px;
+				text-align: center;
+				overflow: hidden;
+				
+			}
+			
+			
+			
+			.card{
+			   margin-bottom: 5px;
+			   background-color: #fff;
+			   max-width: 400px;
+			   width: 75%;
+				color: black;
+				text-decoration: none;
+				padding-top: 0px;
+				padding-bottom: 10px;
+				border: 1px solid #ccc;
+				
+             border-radius: 10px;
+				display: block;
+				font-family: 'Maven Pro', sans-serif;
+				font-size: 15px;
+				text-align: center;
+				overflow: hidden;
+				
+			}
+			
+			
+.assistir {
+    display: grid;
+    -webkit-box-align: center;
+    place-items: center;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    align-items: center;
+    justify-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+  
+}
+
+
+.legenda{
+				display: block;
+				vertical-align: middle;
+				line-height: 13px;
+				background-color: #f3f3f3;
+				padding: 10px;
+				text-align: left;
+				border-bottom: 1px solid #ccc;
+				font-size: 12px;
+				font-family: 'Maven Pro', sans-serif;
+			}
+			
+
+
+.iconeliga{
+				width: 20px;
+				height: 20px;
+				align-items: left;
+				display: inline-block;
+				margin-top: 7px;
+				margin-left: 10px;
+				margin-right: 5px;
+				position: relative;
+			    overflow: hidden;
+			    float: left;
+			    vertical-align: middle;
+				}
+
+			
+			.btn-novo{
+  background-color: #e9e9e9;
+  border: none;
+  color: rgb(0, 152, 95);
+  padding: 6px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 2.5px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  cursor: pointer;
+  border-radius: 5px;
+font-family: 'Maven Pro', sans-serif;
+  border: 0.5px solid #ccc;
+}
+			
+			
+			
+
+			g{
+				
+				font-size: 12px;
+				color: #757575; 
+				text-align: center;
+				
+
+			}
+			
+			
+			.time-casa{
+            	font-size: 12px;
+             	text-align: center;
+				margin-top: 0px;
+				line-height: 12px;
+				
+				
+				
+            
+             
+             
+             
+            
+			}
+            
+
+
+             .time-fora{
+				font-size: 12px;
+				text-align: center;
+				margin-top: 0px;
+				line-height: 12px;
+				
+				
+				
+				
+				
+             
+
+			}
+        
+			
+			  
+	
+			.iconelistacasa{
+				width: 35px;
+				height: 35px;
+				
+				
+				
+				
+			}
+			
+			.iconelistafora{
+				width: 35px;
+				height: 35px;
+				
+				
+				
+				
+		    }
+
+
+			.navbar{
+				background: #4CAF50;
+				left: 0;
+    			top: 0;
+    			height: 56px;
+    			font-size: 20px;
+				color:white;
+			}
+			
+			.navbar-inner{
+				width: 100%;
+			    height: 100%;
+				justify-content: flex-start;
+			}
+			
+			.right{
+				float:right;
+ 			}
+
+			.left a{
+				padding: 0 16px;
+			    line-height: 56px;
+			    height: 56px;
+			    display: flex;
+			    align-items: center;
+			    padding: 0 16px;
+				min-width:30px;
+			}
+
+			.center{
+				font-size: 17px;
+			    font-weight: 500;
+			    text-align: center;
+			    margin: 0 2px 0 20px;
+			    position: relative;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			    line-height: 56px;
+			    display: inline-block;
+			    text-align: left;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			    font-family: Roboto, Noto, Helvetica, Arial, sans-serif;
+			}
+			
+			header{
+			  margin-bottom: 5px;
+			  background-color: #54C259;
+			  text-align: center;
+			  color: #fff;
+			  font-size: 13px;
+			  padding: 5px;
+                       font-family: 'Maven Pro', sans-serif;
+		
+			}
+			
+			
+			     
+            
+
+			.menus{
+			   padding-top: 10px;
+				display: inline-block;
+				margin: auto;
+				width: calc(50% - 10%);
+				vertical-align: top;
+				
+				
+				
+			   
+			}
+
+
+			.menu-center{
+				display: inline-block;
+				position: relative;
+				margin-top: 8px;
+				width: 15%;
+				vertical-align: middle;
+				
+			}
+
+			.menu-center b{
+			   padding-top: 15px;
+				display: block;
+				vertical-align: middle;
+				
+			}
+
+			.menu-center g{
+				display: block;
+				vertical-align: middle;
+				line-height: 13px;
+			}
+			
+			
+			.aovivo3{
+				background-color: #4CAF50;
+             color: #fff;
+             border-radius: 10px;
+             display: block;
+             align-items: center;
+             text-align: center;
+             vertical-align: middle;
+             font-size: 11px;
+             margin-left: 0px;
+             margin-right: 0px;
+				margin-top: 1px;
+				
+				
+				
+            
+			}
+			
+			
+			
+		   .aovivo2{
+		       
+				background-color: #a9a9a9;
+             color: #fff;
+             border-radius: 10px;
+             display: block;
+             align-items: center;
+             text-align: center;
+             vertical-align: middle;
+             font-size: 10px;
+             padding-left: 0px;
+             padding-right: 0px;
+             margin-left: -5px;
+             margin-right: -5px;
+				margin-top: 1px;
+            
+			}
+			
+			
+			
+			.aovivo{
+				background-color: red;
+             color: #fff;
+             border-radius: 10px;
+             display: block;
+             align-items: center;
+             text-align: center;
+             vertical-align: middle;
+             font-size: 10px;
+             margin-left: 0px;
+             margin-right: 0px;
+				margin-top: 1px;
+             animation: animate 
+                3.5s linear infinite;
+			}
+
+           @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+  
+            50% {
+                opacity: 1;
+            }
+  
+            100% {
+                opacity: 0;
+            }
+			
+		
