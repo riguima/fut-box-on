@@ -54,7 +54,11 @@
               {% if game.is_live %}
                 {% for button in game.watchbutton_set.all %}
                   <a target="blank" class="btn-novo" href="{{ button.url }}">
+                  {% if button.name_in_page %}
+                    <i class="fa fa-play"><b>{{ button.name_in_page }}</b></i>
+                  {% else %}
                     <i class="fa fa-play"><b>Assistir {{ forloop.counter }}</b></i>
+                  {% endif %}
                   </a>
                 {% endfor %}
               {% endif %}

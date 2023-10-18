@@ -38,6 +38,7 @@ class Game(models.Model):
 
 class WatchButton(models.Model):
     name = models.CharField()
+    name_in_page = models.CharField(blank=True)
     url = models.CharField()
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
 
