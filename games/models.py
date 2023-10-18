@@ -39,3 +39,7 @@ class Game(models.Model):
 class WatchButton(models.Model):
     url = models.CharField()
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
+
+
+class Configuration(models.Model):
+    header = models.CharField()
