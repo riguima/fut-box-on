@@ -3,12 +3,12 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Championship, Configuration
+from .models import Game, Configuration
 
 
 def index(request):
     context = {
-        'championships': Championship.objects.all(),
+        'games': Game.objects.all().order_by('start_time'),
         'configuration': Configuration.objects.first(),
     }
     return render(request, 'games/index.html', context)
@@ -16,29 +16,24 @@ def index(request):
 
 def api(request):
     response = []
-    for championship in Championship.objects.all():
+    for game in Game.objects.all().order_by('start_time'):
         response.append(
             {
-                'name': championship.name,
-                'image_url': championship.image_url,
-                'games': [
-                    {
-                        'home_team': g.home_team.name,
-                        'visiting_team': g.visiting_team.name,
-                        'home_team_image_url': g.home_team.image_url,
-                        'visiting_team_image_url': g.visiting_team.image_url,
-                        'start_time': f'{g.start_time.hour:>02}h{g.start_time.minute:>02}',
-                        'end_time': f'{g.end_time.hour:>02}h{g.end_time.minute:>02}',
-                        'is_live': g.is_live(),
-                        'is_finished': g.is_finished(),
-                        'buttons': [
-                            {'url': b.url, 'name_in_page': b.name_in_page}
-                            for b in g.watch_buttons.all()
-                        ]
-                    }
-                    for g in championship.game_set.all().order_by('start_time')
+                'championship': game.championship.name,
+                'championship_image_url': game.championship.image_url,
+                'home_team': game.home_team.name,
+                'visiting_team': game.visiting_team.name,
+                'home_team_image_url': game.home_team.image_url,
+                'visiting_team_image_url': game.visiting_team.image_url,
+                'start_time': f'{game.start_time.hour:>02}h{game.start_time.minute:>02}',
+                'end_time': f'{game.end_time.hour:>02}h{game.end_time.minute:>02}',
+                'is_live': game.is_live(),
+                'is_finished': game.is_finished(),
+                'buttons': [
+                    {'url': b.url, 'name_in_page': b.name_in_page}
+                    for b in game.watch_buttons.all()
                 ],
-            }
+            },
         )
     response.append({'header': Configuration.objects.first().header})
     return HttpResponse(json.dumps(response))
