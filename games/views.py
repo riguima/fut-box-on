@@ -27,8 +27,8 @@ def api(request):
                         'visiting_team': g.visiting_team.name,
                         'home_team_image_url': g.home_team.image_url,
                         'visiting_team_image_url': g.visiting_team.image_url,
-                        'start_time': str(g.start_time),
-                        'end_time': str(g.end_time),
+                        'start_time': f'{g.start_time.hour}h{g.start_time.minute}',
+                        'end_time': f'{g.end_time.hour}h{g.end_time.minute}',
                         'is_live': g.is_live(),
                         'is_finished': g.is_finished(),
                         'buttons': [
