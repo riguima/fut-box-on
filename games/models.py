@@ -27,12 +27,26 @@ class Team(models.Model):
         verbose_name_plural = 'Times'
 
 
+class WatchButton(models.Model):
+    name = models.CharField(verbose_name='nome')
+    name_in_page = models.CharField(blank=True, verbose_name='nome na página')
+    url = models.CharField()
+
+    def __str__(self) -> str:
+        return self.name
+
+    class Meta:
+        verbose_name = 'Botão Assistir'
+        verbose_name_plural = 'Botões Assistir'
+
+
 class Game(models.Model):
     championship = models.ForeignKey(Championship, on_delete=models.CASCADE, verbose_name='campeonato')
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='home_team', verbose_name='time mandante')
     visiting_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='visiting_team', verbose_name='time visitante')
     start_time = models.TimeField(verbose_name='inicio')
     end_time = models.TimeField(verbose_name='final')
+    watch_buttons = models.ManyToManyField(WatchButton)
 
     def is_live(self) -> bool:
         return self.start_time < datetime.now().time() < self.end_time
@@ -46,20 +60,6 @@ class Game(models.Model):
     class Meta:
         verbose_name = 'Jogo'
         verbose_name_plural = 'Jogos'
-
-
-class WatchButton(models.Model):
-    name = models.CharField(verbose_name='nome')
-    name_in_page = models.CharField(blank=True, verbose_name='nome na página')
-    url = models.CharField()
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, verbose_name='jogo')
-
-    def __str__(self) -> str:
-        return self.name
-
-    class Meta:
-        verbose_name = 'Botão Assistir'
-        verbose_name_plural = 'Botões Assistir'
 
 
 class Configuration(models.Model):

@@ -52,12 +52,12 @@
             </div> 
             <div class="assistir">
               {% if game.is_live %}
-                {% for button in game.watchbutton_set.all %}
+                {% for button in game.watch_buttons.all %}
                   <a target="blank" class="btn-novo" href="{{ button.url }}">
                   {% if button.name_in_page %}
-                    <i class="fa fa-play"></i><b>{{ button.name_in_page }}</b>
+                    <i class="fa fa-play"></i> <b>{{ button.name_in_page }}</b>
                   {% else %}
-                    <i class="fa fa-play"></i><b>Assistir {{ forloop.counter }}</b>
+                    <i class="fa fa-play"></i> <b>Assistir {{ forloop.counter }}</b>
                   {% endif %}
                   </a>
                 {% endfor %}
