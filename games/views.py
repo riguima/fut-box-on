@@ -30,8 +30,8 @@ def api(request):
                 'is_live': game.is_live(),
                 'is_finished': game.is_finished(),
                 'buttons': [
-                    {'url': b.url, 'name_in_page': b.name_in_page}
-                    for b in game.watch_buttons.all()
+                    {'url': b.watch_button.url, 'name': b.name}
+                    for b in game.watchbuttonlabel_set.all()
                 ],
             },
         )
