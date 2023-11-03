@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Game, Configuration
+from .models import Game, Configuration, WatchButton
 
 
 def index(request):
@@ -36,4 +36,16 @@ def api(request):
             },
         )
     response.append({'header': Configuration.objects.first().header})
+    return HttpResponse(json.dumps(response))
+
+
+def watch_buttons(request):
+    response = []
+    for watch_button in WatchButton.objects.all().order_by('name'):
+        response.append(
+            {
+                'name': watch_button.name,
+                'url': watch_button.url,
+            },
+        )
     return HttpResponse(json.dumps(response))
