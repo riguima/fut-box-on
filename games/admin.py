@@ -11,8 +11,19 @@ class GameAdmin(admin.ModelAdmin):
     inlines = [WatchButtonLabelInline]
 
 
-admin.site.register(models.Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    ordering = ['name']
+
+
+class WatchButtonAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    ordering = ['name']
+
+
+
+admin.site.register(models.Team, TeamAdmin)
 admin.site.register(models.Championship)
 admin.site.register(models.Game, GameAdmin)
-admin.site.register(models.WatchButton)
+admin.site.register(models.WatchButton, WatchButtonAdmin)
 admin.site.register(models.Configuration)
