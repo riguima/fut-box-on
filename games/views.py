@@ -32,7 +32,7 @@ def api(request):
                     'is_finished': game.is_finished(),
                     'buttons': [
                         {'url': b.watch_button.url, 'name': b.name}
-                        for b in game.watchbuttonlabel_set.all()
+                        for b in game.watchbuttonlabel_set.all().order_by('name')
                     ],
                 },
             )
@@ -52,7 +52,7 @@ def api(request):
                     'is_finished': game.is_finished(),
                     'buttons': [
                         {'url': b.watch_button.url, 'name': b.name}
-                        for b in game.watchbuttonlabel_set.all()
+                        for b in game.watchbuttonlabel_set.all().order_by('name')
                     ],
                 },
             )
