@@ -48,6 +48,7 @@ def api(request):
                     'visiting_team_image_url': game.visiting_team.image_url,
                     'start_time': f'{game.start_time.hour:>02}h{game.start_time.minute:>02}',
                     'end_time': f'{game.end_time.hour:>02}h{game.end_time.minute:>02}',
+                    'background': f'{game.image.filename}',
                     'is_live': game.is_live(),
                     'is_finished': game.is_finished(),
                     'buttons': [

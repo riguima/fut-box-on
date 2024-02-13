@@ -44,6 +44,7 @@ class Game(models.Model):
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='home_team', verbose_name='time mandante')
     visiting_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='visiting_team', verbose_name='time visitante')
     start_time = models.TimeField(verbose_name='inicio')
+    background = models.ImageField(upload_to='uploads', verbose_name='fundo', null=True)
     end_time = models.TimeField(verbose_name='final')
 
     def is_live(self) -> bool:
